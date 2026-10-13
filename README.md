@@ -5,7 +5,9 @@
 
 
 Actividad 2: Recorrido e Inserción
+
 Para implementar los algoritmos de recorrido completo e inserción al inicio en una lista enlazada simple en Java, primero definiremos la estructura básica de un Nodo y luego la clase de la Lista Enlazada.
+
 -Estructura base del Nodo
  
 
@@ -23,6 +25,7 @@ Cada elemento de la lista contiene un valor (dato) y una referencia al siguiente
 
 
 1- Algoritmo de Inserción al Inicio  
+
 Este algoritmo agrega un nuevo nodo al comienzo de la lista. Su complejidad temporal es (O(1)) porque solo requiere reasignar punteros directamente, sin recorrer toda la lista.
 
 
@@ -47,6 +50,7 @@ Lógica:
 
 
 2- Algoritmo de Recorrido Completo
+
 Este algoritmo visita cada uno de los nodos desde el inicio hasta el final de la lista para procesar o mostrar su información. Su complejidad temporal es (O(n)), donde $n$ es el número de elementos.
 
 
