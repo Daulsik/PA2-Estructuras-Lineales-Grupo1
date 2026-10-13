@@ -72,6 +72,7 @@ Lógica:
 -Crear un bucle que se ejecute mientras actual sea diferente de null.
 
 -Procesar el dato del nodo actual (imprimir).
+
 -Avanzar al siguiente nodo haciendo actual = actual.siguiente.
     
 
