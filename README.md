@@ -78,8 +78,8 @@ Lógica:
 3- Algoritmo de Inserción al Final
 Este algoritmo agrega un nuevo nodo al final de la lista. Su complejidad temporal es (O(n)), ya que, al no tener una referencia directa a la cola de la lista, requiere recorrer todos los elementos desde el inicio hasta encontrar el último nodo.
 
-Java
-public void insertarAlFinal(int dato) {
+```java
+   public void insertarAlFinal(int dato) {
     // Crear el nuevo nodo
     Nodo nuevoNodo = new Nodo(dato);
 
@@ -100,6 +100,7 @@ public void insertarAlFinal(int dato) {
     // Apuntar el siguiente del último nodo al nuevo nodo
     actual.siguiente = nuevoNodo;
 }
+```    
 Lógica:
 
 Crear un nuevo nodo con el valor proporcionado.
@@ -108,15 +109,15 @@ Verificar si la lista está vacía (cuando cabeza es null). Si lo está, el nuev
 
 Si no está vacía, inicializar un nodo temporal (actual) apuntando a la cabeza.
 
-Crear un bucle que avance nodo por nodo hasta detenerse en el último .
+Crear un bucle que avance nodo por nodo hasta detenerse en el último (aquel cuyo puntero siguiente sea null).
 
 Hacer que el puntero siguiente de ese último nodo apunte al nuevo nodo, agregándolo al final.
 
 4- Algoritmo de Inserción en una Posición Indicada
 Este algoritmo inserta un nuevo nodo en un índice o posición específica de la lista. Su complejidad temporal en el peor de los casos es (O(n)), ya que requiere recorrer la estructura hasta encontrar el nodo inmediatamente anterior a la posición deseada.
 
-Java
-public void insertarEnPosicion(int dato, int posicion) {
+```java
+    public void insertarEnPosicion(int dato, int posicion) {
     // Si la posición es 0, es equivalente a insertar al inicio
     if (posicion == 0) {
         Nodo nuevoNodo = new Nodo(dato);
@@ -144,6 +145,7 @@ public void insertarEnPosicion(int dato, int posicion) {
     nuevoNodo.siguiente = actual.siguiente;
     actual.siguiente = nuevoNodo;
 }
+```
 Lógica:
 
 Validar si la posición solicitada es 0; de ser así, se inserta directamente al inicio de la lista.
@@ -159,6 +161,4 @@ Crear el nuevo nodo.
 Hacer que el puntero siguiente del nuevo nodo apunte al nodo que originalmente ocupaba esa posición (actual.siguiente).
 
 Actualizar el puntero siguiente del nodo actual (el anterior) para que apunte al nuevo nodo, intercalándolo exitosamente.
-    
-
 
