@@ -39,7 +39,9 @@ Este algoritmo agrega un nuevo nodo al comienzo de la lista. Su complejidad temp
 
 Lógica:
 -Crear un nuevo nodo con el valor proporcionado.
+
 -Hacer que el puntero siguiente del nuevo nodo apunte a la cabeza actual (cabeza) de la lista.
+
 -Actualizar la cabeza de la lista para que sea el nuevo nodo.
 
 
@@ -60,7 +62,9 @@ Este algoritmo visita cada uno de los nodos desde el inicio hasta el final de la
 
 Lógica:
 -Inicializar un nodo temporal (actual) apuntando a la cabeza de la lista.
+
 -Crear un bucle que se ejecute mientras actual sea diferente de null.
+
 -Procesar el dato del nodo actual (imprimir).
 -Avanzar al siguiente nodo haciendo actual = actual.siguiente.
     
