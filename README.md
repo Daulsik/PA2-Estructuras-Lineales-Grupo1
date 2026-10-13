@@ -74,6 +74,91 @@ Lógica:
 -Procesar el dato del nodo actual (imprimir).
 
 -Avanzar al siguiente nodo haciendo actual = actual.siguiente.
+
+3- Algoritmo de Inserción al Final
+Este algoritmo agrega un nuevo nodo al final de la lista. Su complejidad temporal es (O(n)), ya que, al no tener una referencia directa a la cola de la lista, requiere recorrer todos los elementos desde el inicio hasta encontrar el último nodo.
+
+Java
+public void insertarAlFinal(int dato) {
+    // Crear el nuevo nodo
+    Nodo nuevoNodo = new Nodo(dato);
+
+    // Si la lista está vacía, el nuevo nodo es la cabeza
+    if (cabeza == null) {
+        cabeza = nuevoNodo;
+        return;
+    }
+
+    // Nodo temporal para recorrer la lista
+    Nodo actual = cabeza;
+
+    // Recorrer hasta encontrar el último nodo
+    while (actual.siguiente != null) {
+        actual = actual.siguiente; // Avanzar al siguiente nodo
+    }
+
+    // Apuntar el siguiente del último nodo al nuevo nodo
+    actual.siguiente = nuevoNodo;
+}
+Lógica:
+
+Crear un nuevo nodo con el valor proporcionado.
+
+Verificar si la lista está vacía (cuando cabeza es null). Si lo está, el nuevo nodo se convierte automáticamente en la cabeza.
+
+Si no está vacía, inicializar un nodo temporal (actual) apuntando a la cabeza.
+
+Crear un bucle que avance nodo por nodo hasta detenerse en el último .
+
+Hacer que el puntero siguiente de ese último nodo apunte al nuevo nodo, agregándolo al final.
+
+4- Algoritmo de Inserción en una Posición Indicada
+Este algoritmo inserta un nuevo nodo en un índice o posición específica de la lista. Su complejidad temporal en el peor de los casos es (O(n)), ya que requiere recorrer la estructura hasta encontrar el nodo inmediatamente anterior a la posición deseada.
+
+Java
+public void insertarEnPosicion(int dato, int posicion) {
+    // Si la posición es 0, es equivalente a insertar al inicio
+    if (posicion == 0) {
+        Nodo nuevoNodo = new Nodo(dato);
+        nuevoNodo.siguiente = cabeza;
+        cabeza = nuevoNodo;
+        return;
+    }
+
+    Nodo actual = cabeza;
+    int contador = 0;
+
+    // Recorrer hasta llegar al nodo ANTERIOR a la posición
+    while (actual != null && contador < posicion - 1) {
+        actual = actual.siguiente;
+        contador++;
+    }
+
+    // Validar que la posición no exceda el tamaño de la lista
+    if (actual == null) {
+        throw new IllegalArgumentException("Posición fuera de rango");
+    }
+
+    // Crear el nuevo nodo y reconectar los enlaces
+    Nodo nuevoNodo = new Nodo(dato);
+    nuevoNodo.siguiente = actual.siguiente;
+    actual.siguiente = nuevoNodo;
+}
+Lógica:
+
+Validar si la posición solicitada es 0; de ser así, se inserta directamente al inicio de la lista.
+
+Inicializar un nodo temporal (actual) en la cabeza y un contador en 0.
+
+Crear un bucle para avanzar por la lista hasta detenerse exactamente un nodo antes de la posición donde se desea insertar (posicion - 1).
+
+Validar que el nodo actual no sea nulo, lo cual indicaría que la posición solicitada es mayor al tamaño de la lista.
+
+Crear el nuevo nodo.
+
+Hacer que el puntero siguiente del nuevo nodo apunte al nodo que originalmente ocupaba esa posición (actual.siguiente).
+
+Actualizar el puntero siguiente del nodo actual (el anterior) para que apunte al nuevo nodo, intercalándolo exitosamente.
     
 
 
