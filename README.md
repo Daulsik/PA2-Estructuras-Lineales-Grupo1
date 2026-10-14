@@ -7,13 +7,13 @@ El equipo resolvió la gestión dinámica de una secuencia de solicitudes de ate
 
 #INTEGRANTES:
 
-| Integrante | Aporte principal |
-|---|---|---|
-| [Huamancha Perez Jose Jossimar] | Integrador / Desarrollador | Actividad 3 Listas Simple y gestión del repositorio. |
-| [Paco Becerra Juan Steve] | Desarrollador | Actividad 2 (Vectores - Búsqueda e Inserción). |
-| Gabriel Valdiviezo Castillo | Analista / Documentador | Actividad 1 (Análisis teórico) y revisión general. |
-| [Mucho Mamani Richard] | Analista / Documentador | Actividad 4 (Análisis teórico) y revisión general. |
-| [Marvin Mora Mendieta] | Analista / Documentador | Actividad 1 (Análisis teórico) y revisión general. |
+| Integrante                      | Aporte principal |
+|---                              |---|
+| [Huamancha Perez Jose Jossimar] | Actividad 3 Listas Simple y gestión del repositorio. |
+| [Paco Becerra Juan Steve]       | Actividad 2 (Vectores - Búsqueda e Inserción). |
+| Gabriel Valdiviezo Castillo     | Actividad 1 (Análisis teórico) y revisión general. |
+| [Mucho Mamani Richard]          | Actividad 4 (Análisis teórico) y revisión general. |
+| [Marvin Mora Mendieta]          | Actividad 1 (Análisis teórico) y revisión general. |
 
 
 
