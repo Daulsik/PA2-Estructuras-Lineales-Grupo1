@@ -34,6 +34,9 @@ PA2-Estructuras-Lineales-Grupo1/
 
 
  
+##  Video de exposición
+
+https://youtu.be/e3NI_I1emng
 
 Actividad 1. Fundamentos y Representación de listas enlazadas
 
