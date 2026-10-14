@@ -1,4 +1,39 @@
-﻿# PA2-Estructuras-Lineales-Grupo1
+# PA2-Estructuras-Lineales-Grupo1
+
+## Objetivo del Trabajo
+El equipo resolvió la gestión dinámica de una secuencia de solicitudes de atención utilizando estructuras de datos lineales dinámicas (listas enlazadas). El sistema permite manejar un registro que cambia constantemente —ingreso de nuevos casos, eliminaciones, reubicaciones y navegación estructurada— priorizando la claridad del modelado, la eficiencia algorítmica y la argumentación técnica.
+
+
+
+#INTEGRANTES:
+
+| Integrante | Aporte principal |
+|---|---|---|
+| [Huamancha Perez Jose Jossimar] | Integrador / Desarrollador | Actividad 3 Listas Simple y gestión del repositorio. |
+| [Paco Becerra Juan Steve] | Desarrollador | Actividad 2 (Vectores - Búsqueda e Inserción). |
+| Gabriel Valdiviezo Castillo | Analista / Documentador | Actividad 1 (Análisis teórico) y revisión general. |
+| [Mucho Mamani Richard] | Analista / Documentador | Actividad 4 (Análisis teórico) y revisión general. |
+| [Marvin Mora Mendieta] | Analista / Documentador | Actividad 1 (Análisis teórico) y revisión general. |
+
+
+
+## Estructura del Repositorio
+```
+PA2-Estructuras-Lineales-Grupo1/
+├── Actividad_1_Fundamentos/
+├── Actividad_2_Recorrido_Insercion/
+├── Actividad_3_Listas_Simples/
+├── Actividad_4_Dobles_Circulares/
+└── README.md
+```
+
+
+
+
+
+
+
+ 
 
 Actividad 1. Fundamentos y Representación de listas enlazadas
 
@@ -171,6 +206,38 @@ Crear un bucle para avanzar por la lista hasta detenerse exactamente un nodo ant
 Validar que el nodo actual no sea nulo, lo cual indicaría que la posición solicitada es mayor al tamaño de la lista.
 
 Crear el nuevo nodo.
+
+Actividad 3: Lista enlazada simple (Búsqueda, modificación y eliminación)
+**Responsable:** Jossimar Huamancha
+
+En esta sección se desarrolló la implementación algorítmica y orientada a objetos en Java para la gestión dinámica de solicitudes de atención mediante una **lista enlazada simple**. El código se encuentra modularizado en dos archivos dentro de la carpeta `Actividad_3_Listas_Simples/`:
+- `Nodo.java`: Define la estructura base del nodo (`codigo`, `descripcion`, `estado` y el puntero `siguiente`).
+- `ListaSimple.java`: Contiene la lógica de control, los métodos operativos y el método `main` de pruebas.
+
+#### Operaciones Implementadas:
+1. **Algoritmo de Búsqueda secuencial ($\mathcal{O}(n)$):**
+   - Recorre la estructura nodo por nodo desde la `cabeza`  evaluando el atributo `codigo` hasta encontrar la coincidencia exacta, debido a la ausencia de acceso directo por índices en memoria dinámica.
+2. **Algoritmo de Modificación:**
+   - Utiliza el resultado de la búsqueda para acceder directamente a la referencia en memoria del nodo localizado, permitiendo actualizar sus atributos (por ejemplo, cambiar el estado de la solicitud a *Resuelto*).
+3. **Algoritmo de Eliminación y Reajuste de Enlaces:**
+   - Gestiona la desconexión de nodos evaluando tres escenarios críticos:
+     - *Eliminación de la cabeza:* Desplaza el puntero principal al siguiente nodo (`cabeza = cabeza.siguiente`).
+     - *Eliminación intermedia o final:* Emplea un puntero `anterior` para aplicar el reajuste estructural clave `anterior.siguiente = actual.siguiente`, "saltando" y liberando el nodo objetivo.
+
+#### Análisis de Eficiencia:
+- **Operaciones al inicio ($\mathcal{O}(1)$):** La inserción y eliminación al principio son de orden constante ya que solo reasignan el puntero principal sin requerir un recorrido previo.
+- **Operaciones al final o posiciones intermedias ($\mathcal{O}(n)$):** Las búsquedas, modificaciones y eliminaciones fuera del inicio exigen un recorrido secuencial obligatorio, elevando el costo computacional de manera lineal respecto al número total de nodos ($n$).
+
+
+
+Hacer que el puntero siguiente del nuevo nodo apunte al nodo que originalmente ocupaba esa posición (actual.siguiente).
+
+Resumen de la Actividad 3:
+Implementación de algoritmos de búsqueda secuencial O(n), modificación y eliminación con reajuste de punteros en lista simple (anterior.siguiente = actual.siguiente), analizando la eficiencia de cada operación.
+
+Actualizar el puntero siguiente del nodo actual (el anterior) para que apunte al nuevo nodo, intercalándolo exitosamente.
+
+
 
 Hacer que el puntero siguiente del nuevo nodo apunte al nodo que originalmente ocupaba esa posición (actual.siguiente).
 
