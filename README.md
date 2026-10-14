@@ -13,7 +13,7 @@ El equipo resolvió la gestión dinámica de una secuencia de solicitudes de ate
 | [Paco Becerra Juan Steve]       | Actividad 2 (Vectores - Búsqueda e Inserción). |
 | Gabriel Valdiviezo Castillo     | Actividad 1 (Análisis teórico) y revisión general. |
 | [Mucho Mamani Richard]          | Actividad 2 (Análisis teórico) y revisión general. |
-| [Marvin Mora Mendieta]          | Actividad 1 (Análisis teórico) y revisión general. |
+| [Marvin Mora Mendieta]          | Actividad 4 Dobles Circulares. |
 
 
 
