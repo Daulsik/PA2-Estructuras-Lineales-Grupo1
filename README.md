@@ -98,7 +98,8 @@ Lógica:
 -Actualizar la cabeza de la lista para que sea el nuevo nodo.
 
 
-2- Algoritmo de Recorrido Completo
+2- Algoritmo de Recorrido Completo.
+
 
 Este algoritmo visita cada uno de los nodos desde el inicio hasta el final de la lista para procesar o mostrar su información. Su complejidad temporal es (O(n)), donde $n$ es el número de elementos.
 
@@ -124,7 +125,8 @@ Lógica:
 
 -Avanzar al siguiente nodo haciendo actual = actual.siguiente.
 
-3- Algoritmo de Inserción al Final
+3- Algoritmo de Inserción al Final.
+
 Este algoritmo agrega un nuevo nodo al final de la lista. Su complejidad temporal es (O(n)), ya que, al no tener una referencia directa a la cola de la lista, requiere recorrer todos los elementos desde el inicio hasta encontrar el último nodo.
 
 ```java
@@ -162,7 +164,8 @@ Crear un bucle que avance nodo por nodo hasta detenerse en el último (aquel cuy
 
 Hacer que el puntero siguiente de ese último nodo apunte al nuevo nodo, agregándolo al final.
 
-4- Algoritmo de Inserción en una Posición Indicada
+4- Algoritmo de Inserción en una Posición Indicada.
+
 Este algoritmo inserta un nuevo nodo en un índice o posición específica de la lista. Su complejidad temporal en el peor de los casos es (O(n)), ya que requiere recorrer la estructura hasta encontrar el nodo inmediatamente anterior a la posición deseada.
 
 ```java
