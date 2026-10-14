@@ -1,4 +1,4 @@
-# PA2-Estructuras-Lineales-Grupo1
+ # PA2-Estructuras-Lineales-Grupo1
 
 ## Objetivo del Trabajo
 El equipo resolvió la gestión dinámica de una secuencia de solicitudes de atención utilizando estructuras de datos lineales dinámicas (listas enlazadas). El sistema permite manejar un registro que cambia constantemente —ingreso de nuevos casos, eliminaciones, reubicaciones y navegación estructurada— priorizando la claridad del modelado, la eficiencia algorítmica y la argumentación técnica.
@@ -38,7 +38,7 @@ PA2-Estructuras-Lineales-Grupo1/
 
 https://youtu.be/e3NI_I1emng
 
-Actividad 1. Fundamentos y Representación de listas enlazadas
+## Actividad 1. Fundamentos y Representación de listas enlazadas
 
 1.	¿Que es una lista enlazada?
 Una lista enlazada es una estructura de datos la cual es dinámica, esta almacena elementos en nodos que están conectados por enlaces o referencias. Cada nodo de una lista contiene información que permite acceder al siguiente nodo, o incluso al anterior. La diferencia con un arreglo es que las listas permiten insertar, eliminar y reubicar sus elementos sin tener que desplazar los elementos posteriores.
@@ -56,7 +56,7 @@ Una lista enlazada simple se representa mediante sus nodos que contienen informa
 *Las listas enlazadas son adecuadas para el caso debido a que permiten administrar estas solicitudes de forma dinámica. Según se necesite se puede usar una lista simple con recorrido hacia adelante, una doble para navegar en ambos sentidos o incluso una circular para que se haga una revisión continua.
 
 
-Actividad 2: Recorrido e Inserción
+## Actividad 2: Recorrido e Inserción
 
 Para implementar los algoritmos de recorrido completo e inserción al inicio en una lista enlazada simple en Java, primero definiremos la estructura básica de un Nodo y luego la clase de la Lista Enlazada.
 
@@ -213,7 +213,7 @@ Validar que el nodo actual no sea nulo, lo cual indicaría que la posición soli
 
 Crear el nuevo nodo.
 
-Actividad 3: Lista enlazada simple (Búsqueda, modificación y eliminación)
+## Actividad 3: Lista enlazada simple (Búsqueda, modificación y eliminación)
 **Responsable:** Jossimar Huamancha
 
 En esta sección se desarrolló la implementación algorítmica y orientada a objetos en Java para la gestión dinámica de solicitudes de atención mediante una **lista enlazada simple**. El código se encuentra modularizado en dos archivos dentro de la carpeta `Actividad_3_Listas_Simples/`:
@@ -250,7 +250,7 @@ Hacer que el puntero siguiente del nuevo nodo apunte al nodo que originalmente o
 Actualizar el puntero siguiente del nodo actual (el anterior) para que apunte al nuevo nodo, intercalándolo exitosamente.
 
 
- **Actividad 4: listas dobles y circulares**. Desarrollé la explicación de dos situaciones del caso en las que conviene utilizar estas estructuras, preparé sus representaciones gráficas y justifiqué por qué cada una resulta más adecuada que una lista simple según la necesidad.
+## **Actividad 4: listas dobles y circulares**. Desarrollé la explicación de dos situaciones del caso en las que conviene utilizar estas estructuras, preparé sus representaciones gráficas y justifiqué por qué cada una resulta más adecuada que una lista simple según la necesidad.
 
 - **Lista doble:** permite avanzar y retroceder entre solicitudes mediante los enlaces al nodo siguiente y al anterior.
 - **Lista circular:** permite que la revisión continúe desde la primera solicitud al llegar a la última, porque el último nodo apunta al primero.
