@@ -245,4 +245,100 @@ Actualizar el puntero siguiente del nodo actual (el anterior) para que apunte al
 Hacer que el puntero siguiente del nuevo nodo apunte al nodo que originalmente ocupaba esa posición (actual.siguiente).
 
 Actualizar el puntero siguiente del nodo actual (el anterior) para que apunte al nuevo nodo, intercalándolo exitosamente.
+# Actividad 4: Listas Dobles y Circulares
 
+### *(Búsqueda bidireccional y ciclo continuo)*
+
+**Responsable:** Marvin Mora Mendieta
+
+En esta sección se desarrolló la implementación algorítmica y orientada a objetos en **Java** para dos variantes de listas enlazadas que responden a necesidades específicas del caso de gestión de solicitudes de atención: la **lista doblemente enlazada** y la **lista circular**. El código se encuentra modularizado en dos carpetas dentro de `Actividad_4_Listas_Dobles_Circulares/`:
+
+- **`NodoDoble.java`** y **`ListaDoble.java`**: para la navegación en ambos sentidos.
+- **`NodoCircular.java`** y **`ListaCircular.java`**: para el ciclo continuo de revisión.
+
+---
+
+## 1. Lista Doblemente Enlazada
+
+### 1.1 Justificación frente al caso
+
+El caso plantea situaciones donde se necesita **navegar en ambos sentidos**: por ejemplo, cuando un agente de atención debe retroceder al caso anterior para corregir una respuesta o revisar el historial de atención. En una lista simple esto implica reiniciar el recorrido desde la cabeza (**O(n)**); la lista doble resuelve esto con un segundo puntero (`anterior`) que permite el retroceso en **O(1)**.
+
+
+### 1.2 Estructura del nodo
+
+Cada nodo almacena la carga útil (`codigo`, `descripcion`, `estado`) y **dos referencias**: `siguiente` (nodo posterior) y `anterior` (nodo previo). La autorreferencia de estos punteros es lo que convierte a los nodos aislados en una estructura enlazada. El primer nodo tiene `anterior = null` y el último `siguiente = null`.
+
+### 1.3 Operaciones implementadas
+
+**a) Recorrido bidireccional.** Recorre la estructura desde `cabeza` hacia adelante con `actual.siguiente`, y desde `cola` hacia atrás con `actual.anterior`. Ambos recorridos son **O(n)**, pero el acceso al nodo previo es inmediato, a diferencia de la lista simple donde retroceder exige volver a iniciar desde la cabeza.
+
+**b) Inserción después de un nodo dado (paso a paso).** Para insertar una solicitud nueva (por ejemplo, el código **50** después del nodo **30**) se ejecutan cuatro operaciones de punteros en este orden exacto:
+
+1. `nuevo.siguiente = referencia.siguiente` → el nuevo nodo (50) apunta al nodo que ocupaba esa posición (70).
+2. `nuevo.anterior = referencia` → el nuevo nodo apunta hacia atrás al nodo 30.
+3. `referencia.siguiente.anterior = nuevo` → el nodo 70 retrocede su puntero `anterior` hacia 50 *(solo si 30 no es la cola)*.
+4. `referencia.siguiente = nuevo` → el nodo 30 avanza su puntero hacia 50.
+
+> **Justificación del orden:** si primero ejecutáramos el paso 4, se perdería la única referencia al nodo 70 y quedaría huérfano en memoria. Por eso siempre se conecta **primero el nuevo nodo hacia sus vecinos, y al final el vecino anterior hacia el nuevo**.
+
+**c) Eliminación y reajuste de enlaces (doble sentido).** Gestiona dos escenarios:
+
+- **Eliminación del primer nodo:** el puntero principal avanza (`cabeza = cabeza.siguiente`) y el nuevo primero establece `anterior = null`.
+- **Eliminación intermedia o final:** se aplican dos reajustes simétricos:
+- `actual.anterior.siguiente = actual.siguiente` → el nodo anterior **"salta"** al siguiente.
+- `actual.siguiente.anterior = actual.anterior` → el nodo siguiente **"retrocede"** al anterior.
+
+### 1.4 Análisis de eficiencia
+
+| Operación | Costo | Justificación |
+| --- | --- | --- |
+| Acceso al nodo anterior | **O(1)** | Directo con `actual.anterior` (en lista simple es **O(n)**) |
+| Búsqueda secuencial | **O(n)** | No existe acceso por índice en memoria dinámica; peor caso: elemento ausente o en la cola |
+| Inserción/eliminación al inicio o final | **O(1)** | Solo reasignaciones de punteros (`cabeza`/`cola`) |
+| Inserción/eliminación intermedia | **O(n)** | Requiere búsqueda previa del nodo |
+
+**Costo adicional:** cada nodo almacena un puntero extra, incrementando el consumo de memoria en una referencia por nodo (*trade-off* memoria ↔ velocidad de navegación).
+
+---
+
+## 2. Lista Circular
+
+### 2.1 Justificación frente al caso
+
+El caso indica que *"en ciertos procesos se necesita... mantener un **ciclo continuo de revisión**"*. Ejemplo: el supervisor recorre periódicamente todas las solicitudes pendientes y, al terminar la última, el sistema **regresa automáticamente a la primera**, sin lógica adicional de reinicio. En la lista circular el último nodo enlaza al primero (`ultimo.siguiente = cabeza`), de modo que la estructura nunca "termina" en `null`.
+
+
+### 2.2 Operaciones implementadas
+
+**a) Recorrido del ciclo completo.** Se utiliza un ciclo **`do-while`** partiendo desde `cabeza` y avanzando con `actual.siguiente`, deteniéndose al retornar al nodo inicial (`while (actual != cabeza)`). Esto garantiza una vuelta exacta al ciclo.
+
+>  **¿Por qué `do-while` y no un `while` tradicional?** En una lista circular **no existe un `null` que marque el final**; el criterio de parada es detectar que se regresó a la cabeza. Como el recorrido inicia *en* la cabeza, un `while` evaluaría la condición como falsa desde el inicio y contaría 0 nodos aunque exista 1. El `do-while` ejecuta el cuerpo primero (procesar y avanzar) y evalúa después, garantizando al menos una iteración: **n iteraciones para n nodos → O(n)**. La lista vacía se valida aparte (`if (cabeza == null)`) para evitar el `NullPointerException`.
+
+**b) Inserción al final (manteniendo la circularidad):**
+
+1. `ultimo.siguiente = nuevo` → el último nodo apunta al nuevo.
+2. `ultimo = nuevo` → el puntero `ultimo` avanza al nuevo nodo.
+3. **Clave:** `ultimo.siguiente = cabeza` → se restablece el ciclo.
+
+**c) Eliminación y reajuste del ciclo.** Evalúa tres escenarios críticos:
+
+- **Lista con un único nodo:** se anulan `cabeza` y `ultimo` (`= null`).
+- **Eliminación de la cabeza:** `cabeza` avanza al siguiente y `ultimo.siguiente = cabeza` reconstruye el ciclo.
+- **Eliminación intermedia o final:** el puntero anterior salta al siguiente (`anterior.siguiente = actual.siguiente`); si se elimina el último, `ultimo = anterior` y se restablece `ultimo.siguiente = cabeza`.
+
+### 2.3 Análisis de eficiencia
+
+| Operación | Costo | Justificación |
+| --- | --- | --- |
+| Recorrido continuo | **O(n)** por vuelta | Sin verificar `null` ni reiniciar punteros manualmente |
+| Búsqueda secuencial | **O(n)** promedio | Mismo análisis que en lista simple: sin acceso por índice |
+| Inserción al final | **O(1)** | Solo reasignaciones de punteros |
+
+**Ventaja frente a la lista simple:** el ciclo es propio de la estructura; en la simple se requeriría código extra para detectar el fin (`actual == null`) y regresar manualmente al inicio, aumentando la complejidad lógica del proceso de revisión.
+
+---
+
+## Resumen de la Actividad 4
+
+Implementación de una **lista doblemente enlazada** con navegación bidireccional **O(1)** al nodo anterior y reajuste simétrico de punteros en la eliminación (`actual.anterior.siguiente = actual.siguiente` y `actual.siguiente.anterior = actual.anterior`); y de una **lista circular** con restablecimiento del ciclo mediante `ultimo.siguiente = cabeza` y recorrido con `do-while` para garantizar el conteo y la revisión completos de la estructura, justificando en ambos casos **por qué son más adecuadas que una lista simple** para las situaciones planteadas en el caso.
