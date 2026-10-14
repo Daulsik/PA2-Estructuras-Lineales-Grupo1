@@ -1,7 +1,21 @@
 ﻿# PA2-Estructuras-Lineales-Grupo1
 
+Actividad 1. Fundamentos y Representación de listas enlazadas
 
+1.	¿Que es una lista enlazada?
+Una lista enlazada es una estructura de datos la cual es dinámica, esta almacena elementos en nodos que están conectados por enlaces o referencias. Cada nodo de una lista contiene información que permite acceder al siguiente nodo, o incluso al anterior. La diferencia con un arreglo es que las listas permiten insertar, eliminar y reubicar sus elementos sin tener que desplazar los elementos posteriores.
 
+2.	¿Como se clasifican las listas enlazadas?
+Las listas enlazadas se califican en 3 tipos:
+-	Lista simplemente enlazada: Cada nodo apunta al siguiente y esto solo permite que se recorra la lista hacia adelante.
+-	Lista doblemente enlazada: Cada nodo contiene referencias al nodo anterior y al siguiente. Esto permitirá que se pueda recorrer en ambos sentidos.
+-	Lista circular: El último nodo se enlaza con el primero, haciendo que se vuelva un ciclo continuo.
+
+3.	Representación gráfica básica
+Una lista enlazada simple se representa mediante sus nodos que contienen información y van acompañados de una flecha la cual indica su enlace con el siguiente nodo. La lista empieza con un puntero llamado HEAD y la lista termina cuando se llega a NULL.
+
+4.	Representación de una lista enlazada
+*Las listas enlazadas son adecuadas para el caso debido a que permiten administrar estas solicitudes de forma dinámica. Según se necesite se puede usar una lista simple con recorrido hacia adelante, una doble para navegar en ambos sentidos o incluso una circular para que se haga una revisión continua.
 
 
 Actividad 2: Recorrido e Inserción
