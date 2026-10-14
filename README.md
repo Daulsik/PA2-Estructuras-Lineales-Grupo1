@@ -245,6 +245,8 @@ Actualizar el puntero siguiente del nodo actual (el anterior) para que apunte al
 Hacer que el puntero siguiente del nuevo nodo apunte al nodo que originalmente ocupaba esa posición (actual.siguiente).
 
 Actualizar el puntero siguiente del nodo actual (el anterior) para que apunte al nuevo nodo, intercalándolo exitosamente.
+
+
  **Actividad 4: listas dobles y circulares**. Desarrollé la explicación de dos situaciones del caso en las que conviene utilizar estas estructuras, preparé sus representaciones gráficas y justifiqué por qué cada una resulta más adecuada que una lista simple según la necesidad.
 
 - **Lista doble:** permite avanzar y retroceder entre solicitudes mediante los enlaces al nodo siguiente y al anterior.
