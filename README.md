@@ -10,7 +10,7 @@ El equipo resolvió la gestión dinámica de una secuencia de solicitudes de ate
 | Integrante                      | Aporte principal |
 |---                              |---|
 | [Huamancha Perez Jose Jossimar] | Actividad 3 Listas Simple y gestión del repositorio. |
-| [Paco Becerra Juan Steve]       | Actividad 2 (Vectores - Búsqueda e Inserción). |
+| [Paco Becerra Juan Steve]       | Actividad 2 (Desarrollador-Editor de video) y revision general. |
 | Gabriel Valdiviezo Castillo     | Actividad 1 (Análisis teórico) y revisión general. |
 | [Mucho Mamani Richard]          | Actividad 2 (Análisis teórico) y revisión general. |
 | [Marvin Mora Mendieta]          | Actividad 4 Dobles Circulares. |
